@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MMS.Data.Models.Review>
+
+
+<partial name="_BreadCrumbs" model=@(new []
+{
+    ("/", "Home"), ("","Reviews")
+
+})>
+
+    <h4>List of Reviews</h4>
+    <br />
+
+    @*<p>
+            <a class="btn btn-success" asp-action="Create">Create New Review </a> // Decided not to use this
+        </p>*@
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedOn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie.Title)
+                </th>
+           
+
+                <th>
+                    Options
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!----- For each loop to cycle through the model. Reviews model and then display what is needed -->
+            @foreach (var r in Model) 
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Name)
+                    <!--- The DisplayFor() helper method is a strongly typed extension method. It generates a html string for the model object property specified using a lambda expression.-->
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => r.CreatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => r.Movie.Title)
+                </td>
+                <td>
+                    <!-- Linke to Delete view -->
+                    <a asp-controller="Review" asp-action="Delete" asp-route-id=@r.Id><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

@@ -1,0 +1,59 @@
+﻿
+<!---- Decided to put the menuBar in a new view file and make use of using a partial so I can make the shared layout look nice!-->
+
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Deja Re Vu Movies</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Changed nav link text to white -->
+                        <a class="nav-link text-white" asp-controller="Movie" asp-action="Index">Movies</a>
+                    </li>
+
+                    <!----- Drop down menu created here! -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Movies By</a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link text-white" asp-controller="Movie" asp-action="OrderByTitle">Title</a>
+                            <!----- Nav link text to white and controller is in the movie folder follwed by the conroller action-->
+                            <a class="nav-link text-white" asp-controller="Movie" asp-action="OrderByYear">Year</a>
+                            <!----- Nav link text to white and controller is in the movie folder follwed by the conroller action-->
+                            <a class="nav-link text-white" asp-controller="Movie" asp-action="OrderByDirector">Director</a>
+                            <!----- Nav link text to white and controller is in the movie folder follwed by the conroller action-->
+                        </div>
+
+                    </li>
+
+                    <!-- added menu options here -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Review" asp-action="Index">Reviews</a>
+                        <!-- Changed nav link text to white -->
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="About">About</a>
+                        <!-- Changed nav link text to white -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <!-- Changed nav link text to white -->
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+</header>

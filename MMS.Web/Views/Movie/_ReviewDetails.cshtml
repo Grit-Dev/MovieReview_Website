@@ -1,0 +1,47 @@
+﻿@model MMS.Data.Models.Movie
+
+
+<br /> <!-- Break line made to create a little space between move details and movie review-->
+
+<h4>Reviewer Details</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">CreatedOn</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+
+
+
+    <tbody>
+        @foreach (var reviews in Model.Reviews)
+        {
+            <tr>
+
+                <td>@reviews.Name</td>
+                <td>@Html.DisplayFor(modelItem => reviews.CreatedOn)</td> <!----Why did I use html.Display? It allowed me to get around the time problem i.e(It was displaying the date and time, I used the tag helper to force it to only display the date-->
+                <td>@reviews.Comment</td>
+                <td>@reviews.Rating</td>
+                <td>
+                    <a asp-controller="Movie" asp-action="DeleteReview" asp-route-id=@reviews.Id><i class="far fa-trash-alt"></i></a>
+                    <!-------- using the controller review and Iaction Delete , and get the review ID. Added in some Icon here to for better visual -->
+                </td>
+
+
+            </tr>
+
+        }
+
+
+    </tbody>
+
+</table>
+
+
+
+

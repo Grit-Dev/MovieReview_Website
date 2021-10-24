@@ -1,0 +1,88 @@
+﻿@model MMS.Data.Models.Movie
+
+<partial name="_BreadCrumbs" model=@(new []
+{
+    ("/", "Home"), ("/Movie", "Movies"), ("","Details")
+
+})>
+
+    <!--Breadcrumbs added for a nicer user experience using the partial to make the code look cleaner! -->
+
+    <style>
+
+
+        .minutes {
+            display: inline-block;
+            margin-top: 15px;
+            color: #666;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+
+        .TheImage {
+            position: relative;
+            float: left;
+            margin-right: 20px;
+            height: 120px;
+            box-shadow: 0 0 20px -10px;
+        }
+    </style>
+    <!--Created a sytle section to have a nice format of the images, and a few nice touches to make the details section look nice-->
+
+    <h4>Details</h4>
+
+    <div>
+
+        <hr />
+        <div>
+            <a asp-action="CreateReview" asp-route-id="@Model.Id" class="btn btn-success"> Create Review </a>
+            <!-- add navigation link to Details action, passing the correct route id parameter -->
+            <a class="btn btn-secondary" asp-controller="Movie" asp-action="Edit" asp-route-id=@Model.Id>Edit</a>
+            <!-- add navigation link to Delete action, passing the correct route id parameter -->
+            <a class="btn btn-danger" asp-controller="Movie" asp-action="Delete" asp-route-id=@Model.Id>Delete</a>
+       </div>
+
+        
+     
+
+        <hr />
+        <div class="card shadow rounded mt-4 p-3">
+            <div>
+                <div>
+                    <img class="TheImage" src="@Model.PosterUrl" />
+                    <h1>@Html.DisplayFor(model => model.Title)</h1>
+
+                    <h4> @Html.DisplayFor(model => model.Year), @Html.DisplayFor(model => model.Director)</h4> <!------Tag helper to retrieve the name of year and director from the model-->
+                    <p> </p>
+
+                    <span class="minutes">@Html.DisplayFor(model => model.Duration) mins</span>
+
+                    <p class="minutes">@Html.DisplayFor(model => model.Genre)</p>
+                </div>
+                <div>
+                    <partial name="_Rating" /> <!-------Using this partial to show up the star rating calculated in Model.Movie-->
+                </div>
+                <p></p>
+                <div>
+                    <p class="text"> @Html.DisplayFor(model => model.Plot)</p>
+            
+                    <p></p>
+
+                    @Html.DisplayNameFor(model => model.Budget): $@Html.DisplayFor(model => model.Budget)
+                    <p>@Html.DisplayNameFor(model => model.Cast):  @Html.DisplayFor(model => model.Cast) </p>
+
+                    <p></p>
+
+                </div>
+
+            </div>
+        </div>
+     </div>  
+
+    <div>
+        <partial name="_ReviewDetails" />
+
+        <!------ Partial view made here-->
+    </div>

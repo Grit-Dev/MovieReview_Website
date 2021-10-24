@@ -1,0 +1,37 @@
+@model AboutViewModel 
+
+<!---Using the about view model -->
+
+<partial name="_BreadCrumbs" model=@(new []
+{
+    ("/", "Home"),("","About")
+
+})>
+
+    <!--Breadcrumbs added for a nicer user experience! -->
+
+    <div class="card text-center shadow"> <!----Using the card text-center shadow to make it look nice-->
+        <div class="card-header bg-info">
+            <h2>@Model.Title</h2> <!---- pulling the title from the model named about view model -->
+        </div>
+        <div class="card-body">
+            <div class="card-body">
+                <h5 class="card-title">Mission Statement</h5>
+                <p><em>@Model.Message</em></p>
+
+                <br />
+                <div class="column">
+                    <div class="card">
+                        <div class="container">
+
+                            <h2>@Model.NameOfCreator</h2>
+                            <p class="title">@Model.TitleOfCreator</p>
+                            <p>@Model.InfoOnCreator</p>
+                            <p><a class="btn btn-sm btn-info my-3" href="@Model.Url">Click Here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    

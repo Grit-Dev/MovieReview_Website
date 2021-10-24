@@ -1,0 +1,54 @@
+﻿@model MMS.Data.Models.Review
+
+
+<partial name="_BreadCrumbs" model=@(new []
+{
+    ("/", "Home"), ("/Movie", "Movies"), ("/Movie","Details"), ("","ReviewDetails")
+
+})>
+
+    <!------ Partial created here for the breadcrumbs-->
+
+    <h4>Delete Review</h4>
+
+  
+    <div>
+        
+     
+
+        <dl class="card shadow rounded mt-4 p-3">
+            <!-------------->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CreatedOn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Comment)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Comment)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+
+            <!-------- Removed the Id as the user does not need to see that-->
+
+        </dl>
+        <form asp-controller="Review" asp-action="DeleteConfirm" type="post">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Confirm" class="btn btn-danger" />
+            <a class="btn btn-secondary" asp-controller="Review" asp-action="Index">Cancel</a>
+        </form>
+    </div>

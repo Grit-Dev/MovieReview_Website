@@ -1,0 +1,12 @@
+/home/runner/Assignment-PaulMcGinley/MMS.Data/bin/Debug/net5.0/MMS.Data.deps.json
+/home/runner/Assignment-PaulMcGinley/MMS.Data/bin/Debug/net5.0/MMS.Data.dll
+/home/runner/Assignment-PaulMcGinley/MMS.Data/bin/Debug/net5.0/ref/MMS.Data.dll
+/home/runner/Assignment-PaulMcGinley/MMS.Data/bin/Debug/net5.0/MMS.Data.pdb
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/MMS.Data.csprojAssemblyReference.cache
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/MMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/MMS.Data.AssemblyInfoInputs.cache
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/MMS.Data.AssemblyInfo.cs
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/MMS.Data.csproj.CoreCompileInputs.cache
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/MMS.Data.dll
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/ref/MMS.Data.dll
+/home/runner/Assignment-PaulMcGinley/MMS.Data/obj/Debug/net5.0/MMS.Data.pdb

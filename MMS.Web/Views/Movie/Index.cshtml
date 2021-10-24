@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MMS.Data.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_BreadCrumbs" model=@(new []
+{
+    ("/", "Home"), ("","Movies")
+
+})>
+
+    <!--Breadcrumbs added for a nicer user experience! -->
+
+    <h4>Movies</h4>
+
+    <p>
+        <a class="btn btn-sm btn-primary my-3" asp-controller="Movie" asp-action="Create">Create Movie</a>
+        <!----- Button created here  and using the controller Movie and action of the Iaction of Create-->
+    </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!--- I decided to hide the ID, because if creatine new movies and deleting the unique key would continue on-->
+                <th scope="col">Title</th>
+                <th scope="col">Director</th>
+                <th scope="col">Year</th>
+                <th scope="col"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Image</th>
+                <!-----Brute force approach but a quick way to get the image text looking nice and it greats space-->
+                <th scope="col"> Options</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <!---------- Foreach loop to go through the model and display what is needed-->
+            @foreach (var m in Model)
+            {
+                <tr>
+
+                    <td>
+                        @m.Title
+                    </td>
+                    <td>
+                        @m.Director
+                    </td>
+                    <td>
+                        @m.Year
+                    </td>
+                    <td>
+                        <img src="@m.PosterUrl" class="img-fluid" height="150" width="150" />
+                    </td>
+                    <td>
+
+
+                        <!--Link to details view with icons included -->
+                        <a asp-controller="Movie" asp-action="Details" asp-route-id=@m.Id><i class="far fa-eye"></i></a>
+                        <!-- Link to edit view with icons included  -->
+                        <a asp-controller="Movie" asp-action="Edit" asp-route-id=@m.Id><i class="far fa-edit"></i></a>
+                        <!-- Linke to Delete view with icons included -->
+                        <a asp-controller="Movie" asp-action="Delete" asp-route-id=@m.Id><i class="far fa-trash-alt"></i></a>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+   

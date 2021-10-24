@@ -1,0 +1,95 @@
+﻿@model Movie
+
+<html>
+<head>
+    <!-- Font Awesome Icon Library is already in the shared folder with layour I do not need to involke this again -->
+    <style>
+        .checked {
+            color: orange;
+        }
+        .fa-star-half {
+            color: orange;
+        }
+    </style>
+    <!------Style to make the stars look orange-->
+</head>
+<body>
+    <!----- If statement created to determine what the percentage of rating is and displaying the icon!-->
+
+    @if (Model.Rating <= 0)
+    {
+       //DIsplay Nothing
+    }
+    else if (Model.Rating > 0 && Model.Rating <= 10)
+    {
+    <span class="fa fa-star checked"></span>
+
+    }
+    else if (Model.Rating <= 10)
+    {
+    <span class="fa-star-half"></span>
+    }
+    else if (Model.Rating > 10 & Model.Rating <= 20)
+    {
+    <span class="fa fa-star checked"></span>
+    }
+    else if (Model.Rating > 20 & Model.Rating <= 30)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa-star half"></span>
+    }
+    else if (Model.Rating > 30 & Model.Rating <= 40)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+
+    }
+    else if (Model.Rating > 40 & Model.Rating <= 50)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-half"></span>
+    }
+    else if (Model.Rating > 50 & Model.Rating <= 60)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+
+    }
+    else if (Model.Rating > 60 & Model.Rating <= 70)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-half"></span>
+
+    }
+    else if (Model.Rating > 70 & Model.Rating <= 80)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+
+    }
+    else if (Model.Rating > 80 & Model.Rating <= 90)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-half"></span>
+    }
+    else if (Model.Rating > 90)
+    {
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    }
+
+
+</body>
+</html>

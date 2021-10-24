@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MMS.Data.Models.Movie>
+
+<partial name="_BreadCrumbs" model=@(new []
+{
+    ("/", "Home"), ("","MoviesByYear")
+
+})>
+
+    <!--Breadcrumbs added for a nicer user experience! -->
+
+
+    <h4>Movies By Year</h4>
+
+    <p>
+        <a class="btn btn-sm btn-primary my-3" asp-controller="Movie" asp-action="Create">Create Movie</a>
+    </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Title</th>
+                <th scope="col">Director</th>
+                <th scope="col"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  Image</th>
+                <!-----Brute force approach but a quick way to get the image text looking nice and it greats space-->
+                <th scope="col"> Options</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <!-------- Ordering by Year-->
+            @foreach (var m in Model.OrderBy(m => m.Year))
+            {
+            <tr>
+                <td>
+                    @m.Year
+                </td>
+                <td>
+                    @m.Title
+                </td>
+                <td>
+                    @m.Director
+                </td>
+                <td>
+                    <img src="@m.PosterUrl" class="img-fluid" height="150" width="150">
+                </td>
+                <td>
+
+               
+                    <!--Link to details view-->
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id=@m.Id><i class="far fa-eye"></i></a>
+                    <!-- Link to edit view  -->
+                    <a asp-controller="Movie" asp-action="Edit" asp-route-id=@m.Id><i class="far fa-edit"></i></a>
+                    <!-- Linke to Delete view -->
+                    <a asp-controller="Movie" asp-action="Delete" asp-route-id=@m.Id><i class="far fa-trash-alt"></i></a>
+
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
